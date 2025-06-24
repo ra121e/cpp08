@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfine.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/24 08:41:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/24 10:10:26 by athonda          ###   ########.fr       */
+/*   Created: 2025/06/24 09:53:50 by athonda           #+#    #+#             */
+/*   Updated: 2025/06/24 10:05:12 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <vector>
-#include <iostream>
-#include "easyfine.hpp"
 
-int	main(void)
+template <typename T>
+std::vector::iterator	easyfind(std::vector<T> input, int	num)
 {
-	std::vector<int> container ={42, 24, 57, 111, 0};
-	std::cout << "container: " << container << std::endl;
-	int	num = 57;
-	std::cout << "find num:" << num << " by the easyfind()" << std::endl;
-	std::cout << "the result: " << easyfind(container, num) << std::endl;
-	return (0);
+	for (std::vector::iterator it = input.begin(), it != input.end(), ++it)
+	{
+		if (*it == num)
+			return (it);
+	}
+	return (it);
+
 }

@@ -6,7 +6,7 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/23 10:40:55 by athonda           #+#    #+#              #
-#    Updated: 2025/06/24 09:04:29 by athonda          ###   ########.fr        #
+#    Updated: 2025/06/24 13:26:10 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ SRC		=	$(SRC_F:%.cpp=$(SRC_DIR)/%.cpp)
 OBJ_DIR	=	obj
 OBJ		=	$(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC_F))
 
-
+DEP_EX	=	easyfind.hpp
 INC_DIR	=	.
-DEP		=	$(wildcard $(patsubst %.cpp,$(INC_DIR)/%.hpp,$(SRC_F)))
+DEP		=	$(wildcard $(patsubst %.cpp,$(INC_DIR)/%.hpp,$(SRC_F))) $(DEP_EX)
 
 CC		=	c++
 CFLAGS	=	-g -Wall -Wextra -Werror -std=c++98

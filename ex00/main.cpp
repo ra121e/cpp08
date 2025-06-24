@@ -6,13 +6,13 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 08:41:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/24 13:19:15 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/24 13:27:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <vector>
 #include <iostream>
-#include "easyfine.hpp"
+#include "easyfind.hpp"
 
 int	main(void)
 {

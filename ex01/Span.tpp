@@ -6,10 +6,12 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 19:40:19 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 21:03:38 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <algorithm>
+#include <vector>
 #include <stdexcept>
 
 template <typename T>
@@ -65,4 +67,21 @@ void	Span<T>::addNumber(unsigned int num)
 	{
 		this->_container.push_back(num);
 	}
+}
+
+//template <typename T>
+//unsigned int	Span<T>::shortestSpan(void)
+//{
+//
+//}
+
+template <typename T>
+unsigned int	Span<T>::longestSpan(void)
+{
+	typename std::vector<T>::iterator	minIt;
+	typename std::vector<T>::iterator	maxIt;
+
+	minIt = std::min_element(_container.begin(), _container.end());
+	maxIt = std::max_element(_container.begin(), _container.end());
+	return (*maxIt - *minIt);
 }

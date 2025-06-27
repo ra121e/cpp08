@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 22:21:50 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 22:24:00 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ int	main(void)
 	Span<int>	container(5);
 
 	container.addNumber(7);
-	container.addNumber(2);
-	container.addNumber(1);
-	container.addNumber(9);
 	container.addNumber(42);
+	container.addNumber(24);
+	container.addNumber(9);
 	container.addNumber(0);
 	try
 	{
@@ -46,7 +45,7 @@ int	main(void)
 	std::cout << container.shortestSpan() << std::endl;
 	std::cout << container.longestSpan() << std::endl;
 
-	banner("10000 test");
+	Banner("10000 test");
 
 	return (0);
 }

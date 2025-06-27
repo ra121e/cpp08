@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 21:45:23 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 22:22:45 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ std::vector<T> const	&Span<T>::getContainer(void) const
 template <typename T>
 void	Span<T>::addNumber(unsigned int num)
 {
-	if (num > 9)
-		return ;
 	if (this->_container.size() >= this->_N)
 		throw std::out_of_range("cannot add beyond the container size");
 	else

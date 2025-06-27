@@ -6,13 +6,14 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/25 10:40:59 by athonda           #+#    #+#              #
-#    Updated: 2025/06/25 10:54:07 by athonda          ###   ########.fr        #
+#    Updated: 2025/06/27 18:56:39 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	Span
 
-SRC_F	=	main.cpp
+SRC_F	=	main.cpp \
+			Span.cpp
 
 SRC_DIR	=	.
 SRC		=	$(SRC_F:%.cpp=$(SRC_DIR)/%.cpp)

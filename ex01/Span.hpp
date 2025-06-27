@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 19:14:23 by athonda          ###   ########.fr       */
+/*   Created: 2025/06/25 12:27:57 by athonda           #+#    #+#             */
+/*   Updated: 2025/06/27 19:05:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Span.hpp"
+#include <vector>
 
-int	main(void)
+template <typename T>
+class Span
 {
-	Span<int>	container(5);
+	public:
+		Span();
+		Span(unsigned int n);
+		Span(Span const &other);
+		Span	&operator=(Span const &other);
+		~Span();
 
-	container.addNumber(1);
-	typename container::iterator	it;
-	it = container.begin();
-	std::cout << *it << " ";
+		unsigned int	getSize(void) const;
 
-	std::cout << std::endl;
-
-	return (0);
-}
+		void	addNumber(unsigned int num);
+//		shortestSpan();
+//		longestSpan();
+	private:
+		unsigned int	_N;
+		std::vector<T>	_container;
+};

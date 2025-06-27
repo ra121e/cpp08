@@ -6,15 +6,21 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 21:29:09 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 22:21:50 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Span.hpp"
 
+void	Banner(std::string title)
+{
+	std::cout << "\n--- " << title << " ---" << std::endl;
+}
+
 int	main(void)
 {
+	Banner("simple test");
 	Span<int>	container(5);
 
 	container.addNumber(7);
@@ -39,6 +45,8 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout << container.shortestSpan() << std::endl;
 	std::cout << container.longestSpan() << std::endl;
+
+	banner("10000 test");
 
 	return (0);
 }

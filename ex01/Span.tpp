@@ -6,10 +6,12 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 21:03:38 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 21:45:23 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <numeric>
 #include <algorithm>
 #include <vector>
 #include <stdexcept>
@@ -69,11 +71,23 @@ void	Span<T>::addNumber(unsigned int num)
 	}
 }
 
-//template <typename T>
-//unsigned int	Span<T>::shortestSpan(void)
-//{
-//
-//}
+template <typename T>
+unsigned int	Span<T>::shortestSpan(void)
+{
+	typename std::vector<T>	sortedContainer = _container;
+	std::cout << "before sort: " << *sortedContainer.begin() << std::endl;
+	std::sort(sortedContainer.begin(), sortedContainer.end());
+	std::cout << "after sort: " << *sortedContainer.begin() << std::endl;
+	std::cout << "after sort: " << *(++sortedContainer.begin()) << std::endl;
+	std::cout << "container size: " << sortedContainer.size() << std::endl;
+	typename std::vector<T>	span(sortedContainer.size() - 1);
+	std::adjacent_difference(sortedContainer.begin() + 1, sortedContainer.end(), span.begin());
+	std::cout << "span: " << *span.begin() << std::endl;
+
+	typename std::vector<T>::iterator	minIt;
+	minIt = std::min_element(span.begin(), span.end());
+	return (*minIt);
+}
 
 template <typename T>
 unsigned int	Span<T>::longestSpan(void)

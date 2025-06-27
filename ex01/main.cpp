@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 20:59:00 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 21:29:09 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(void)
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
+	std::cout << container.shortestSpan() << std::endl;
 	std::cout << container.longestSpan() << std::endl;
 
 	return (0);

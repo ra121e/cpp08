@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.cpp                                           :+:      :+:    :+:   */
+/*   Span.tpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 19:06:24 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 19:40:19 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdexcept>
-#include "Span.hpp"
 
 template <typename T>
 Span<T>::Span()
@@ -47,6 +46,12 @@ template <typename T>
 unsigned int	Span<T>::getSize(void) const
 {
 	return (this->_N);
+}
+
+template <typename T>
+std::vector<T> const	&Span<T>::getContainer(void) const
+{
+	return (this->_container);
 }
 
 template <typename T>

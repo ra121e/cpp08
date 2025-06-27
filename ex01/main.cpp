@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 19:46:23 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/27 19:55:56 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ int	main(void)
 	container.addNumber(2);
 	container.addNumber(1);
 	container.addNumber(9);
+	container.addNumber(42);
+	container.addNumber(0);
+	try
+	{
+		container.addNumber(3);
+	}
+	catch (std::out_of_range &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::vector<int>::const_iterator	it;
 	for (it = container.getContainer().begin(); it != container.getContainer().end(); ++it)
 	{

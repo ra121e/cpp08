@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/28 19:08:05 by athonda          ###   ########.fr       */
+/*   Created: 2025/06/28 18:21:52 by athonda           #+#    #+#             */
+/*   Updated: 2025/06/28 18:52:48 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <stack>
-
-void	Banner(std::string title)
+template <class T>
+class MutantStack
 {
-	std::cout << "\n--- " << title << " ---" << std::endl;
-}
+	public:
 
-int	main(void)
-{
-	{
-	Banner("simple test");
-	std::stack<int>	a;
-	std::cout << "stack a is empty or not: " << a.empty() << std::endl;
-	a.push(5);
-	std::cout << "stack a: " << a.top() << std::endl;
-
-	}
-
-
-	return (0);
+	private:
 }

@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 22:22:45 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/28 16:26:00 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,39 @@ template <typename T>
 unsigned int	Span<T>::shortestSpan(void)
 {
 	typename std::vector<T>	sortedContainer = _container;
-	std::cout << "before sort: " << *sortedContainer.begin() << std::endl;
-	std::sort(sortedContainer.begin(), sortedContainer.end());
-	std::cout << "after sort: " << *sortedContainer.begin() << std::endl;
-	std::cout << "after sort: " << *(++sortedContainer.begin()) << std::endl;
-	std::cout << "container size: " << sortedContainer.size() << std::endl;
-	typename std::vector<T>	span(sortedContainer.size() - 1);
-	std::adjacent_difference(sortedContainer.begin() + 1, sortedContainer.end(), span.begin());
-	std::cout << "span: " << *span.begin() << std::endl;
+	std::cout << "original: ";
+	for (typename std::vector<T>::iterator it = sortedContainer.begin(); it != sortedContainer.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
 
+	std::sort(sortedContainer.begin(), sortedContainer.end());
+	std::cout << "sorted: ";
+	for (typename std::vector<T>::iterator it = sortedContainer.begin(); it != sortedContainer.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+	std::cout << "container size: " << sortedContainer.size() << std::endl;
+	typename std::vector<T>	span(sortedContainer.size());
+	std::adjacent_difference(sortedContainer.begin(), sortedContainer.end(), span.begin());
+
+	std::cout << "difference: ";
+	for (typename std::vector<T>::iterator it = span.begin(); it != span.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+
+	span.erase(span.begin());
+
+	std::cout << "erase: ";
+	for (typename std::vector<T>::iterator it = span.begin(); it != span.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
 	typename std::vector<T>::iterator	minIt;
 	minIt = std::min_element(span.begin(), span.end());
 	return (*minIt);

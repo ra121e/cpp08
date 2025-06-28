@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 22:24:00 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/28 16:22:30 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 	container.addNumber(42);
 	container.addNumber(24);
 	container.addNumber(9);
-	container.addNumber(0);
+	container.addNumber(1);
 	try
 	{
 		container.addNumber(3);

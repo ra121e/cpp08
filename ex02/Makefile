@@ -6,7 +6,7 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/28 17:27:50 by athonda           #+#    #+#              #
-#    Updated: 2025/06/28 17:47:26 by athonda          ###   ########.fr        #
+#    Updated: 2025/06/28 22:13:14 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC		=	$(SRC_F:%.cpp=$(SRC_DIR)/%.cpp)
 OBJ_DIR	=	obj
 OBJ		=	$(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRC_F))
 
-#DEP_EX	=	MutantStack.hpp \
+DEP_EX	=	MutantStack.hpp \
 			MutantStack.tpp
 INC_DIR	=	.
 DEP		=	$(wildcard $(patsubst %.cpp,$(INC_DIR)/%.hpp,$(SRC_F))) $(DEP_EX)

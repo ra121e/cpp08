@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:21:52 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/28 22:47:54 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/28 23:27:02 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ class MutantStack
 
 		void	pushStack(T value);
 		T const	&topStack(void) const;
+		size_t	sizeStack(void);
+		bool	emptyStack(void);
+		void	popStack(void);
 
 	private:
 		std::vector<T> _stack;

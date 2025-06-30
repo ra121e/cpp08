@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 19:55:36 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 09:19:00 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,19 @@ int	main(void)
 	Banner("MutantStack test");
 	MutantStack<int>	a;
 	a.push(6);
+	std::cout << "push 6. a is " << a.top() << std::endl;
 	a.push(9);
+	std::cout << "push 9. a is " << a.top() << std::endl;
 	a.push(42);
-	std::cout << "a: " << a.top() << std::endl;
+	std::cout << "push 42. a is " << a.top() << std::endl;
+	std::cout << "size: " << a.size() << std::endl;
+	std::cout << "empty: " << a.empty() << std::endl;
+	a.push(3);
+	std::cout << "push 3. a is " << a.top() << std::endl;
+	a.push(24);
+	std::cout << "push 24. a is " << a.top() << std::endl;
+	a.pop();
+	std::cout << "pop the top. a: " << a.top() << std::endl;
 	}
 
 	return (0);

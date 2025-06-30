@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:21:52 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 19:49:02 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 09:19:26 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ class MutantStack
 
 		void	push(T value);
 		T const	&top(void) const;
-
+		size_t	size(void);
+		bool	empty(void);
+		void	pop(void);
 	private:
 		std::deque<T> _stack;
 };

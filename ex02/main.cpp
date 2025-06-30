@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 16:08:40 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 18:16:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,29 @@ int	main(void)
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
+	}
+	{
+	Banner("mandatory test");
+	MutantStack<int>	mstack;
+	mstack.pushStack(5);
+	mstack.pushStack(17);
+	std::cout << mstack.topStack() << std::endl;
+	mstack.popStack();
+	std::cout << mstack.sizeStack() << std::endl;
+	mstack.pushStack(3);
+	mstack.pushStack(5);
+	mstack.pushStack(737);
+	mstack.pushStack(0);
+	MutantStack<int>::Iterator it = mstack.begin();
+	MutantStack<int>::Iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
 	}
 	return (0);
 }

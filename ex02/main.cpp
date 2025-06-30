@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/28 22:47:31 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 19:55:36 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ int	main(void)
 	{
 	Banner("MutantStack test");
 	MutantStack<int>	a;
-	a.pushStack(6);
-	std::cout << "a: " << a.topStack() << std::endl;
+	a.push(6);
+	a.push(9);
+	a.push(42);
+	std::cout << "a: " << a.top() << std::endl;
 	}
 
 	return (0);

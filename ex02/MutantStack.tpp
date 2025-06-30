@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/28 22:47:50 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 19:54:54 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ MutantStack<T>::~MutantStack()
 {}
 
 template <class T>
-void	MutantStack<T>::pushStack(T value)
+void	MutantStack<T>::push(T value)
 {
-	this->_stack.push_back(value);
+	this->_stack.push_front(value);
 }
 
 template <class T>
-T const	&MutantStack<T>::topStack(void) const
+T const	&MutantStack<T>::top(void) const
 {
-	return (this->_stack.back());
+	return (this->_stack.front());
 }

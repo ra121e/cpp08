@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 12:38:49 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 14:45:21 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,10 @@ template <class T>
 typename MutantStack<T>::Iterator	MutantStack<T>::begin()
 {
 	return (MutantStack<T>::Iterator(_stack.begin()));
+}
+
+template <class T>
+typename MutantStack<T>::Iterator	MutantStack<T>::end()
+{
+	return (MutantStack<T>::Iterator(_stack.end()));
 }

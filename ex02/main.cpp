@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 12:23:48 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 14:39:31 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ int	main(void)
 	a.popStack();
 	std::cout << "a: " << a.topStack() << std::endl;
 
+	Banner("iterator test");
 	MutantStack<int>::Iterator it;
 	it = a.begin();
 	std::cout << "iterator " << *it << std::endl;
+	std::cout << "iterator " << *++it << std::endl;
 	}
 
 	return (0);

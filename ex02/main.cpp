@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 14:39:31 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 15:12:05 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,14 @@ int	main(void)
 	it = a.begin();
 	std::cout << "iterator " << *it << std::endl;
 	std::cout << "iterator " << *++it << std::endl;
+	a.pushStack(7);
+	it = a.end();
+	std::cout << "back " << *it << std::endl;
+	for (it = a.begin(); it != a.end(); ++it)
+	{
+		std::cout << *it <<" ";
+	}
+	std::cout << std::endl;
 	}
 
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 15:12:05 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 16:08:40 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,12 @@ int	main(void)
 		std::cout << *it <<" ";
 	}
 	std::cout << std::endl;
-	}
 
+	for (it = a.end(); it != a.begin(); --it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+	}
 	return (0);
 }

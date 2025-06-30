@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:21:52 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 15:17:46 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 16:04:11 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class MutantStack
 				T	&operator*();
 				Iterator	&operator++();
 //				Iterator	&operator++(int);
+				Iterator	&operator--();
 				bool		operator!=(Iterator const &other);
 				bool		operator==(Iterator const &other);
 			private:

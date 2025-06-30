@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/30 15:18:52 by athonda          ###   ########.fr       */
+/*   Updated: 2025/06/30 16:05:06 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,18 @@ T	&MutantStack<T>::Iterator::operator*()
 {
 	return (*(this->_it));
 }
+
 template <class T>
 typename MutantStack<T>::Iterator	&MutantStack<T>::Iterator::operator++()
 {
 	++(this->_it);
+	return (*this);
+}
+
+template <class T>
+typename MutantStack<T>::Iterator	&MutantStack<T>::Iterator::operator--()
+{
+	--(this->_it);
 	return (*this);
 }
 

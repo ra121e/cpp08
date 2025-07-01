@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/01 18:05:24 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 19:53:53 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 template <class T>
 MutantStack<T>::MutantStack() :
-	_stack()
+	std::stack<T>::stack()
 {}
 
 template <class T>
 MutantStack<T>::MutantStack(MutantStack const &other) :
-	_stack(other._stack)
+	std::stack<T>::stack(other)
 {}
 
 template <class T>
@@ -27,7 +27,7 @@ MutantStack<T>	&MutantStack<T>::operator=(MutantStack const &other)
 {
 	if (this != &other)
 	{
-		this->_stack = other._stack;
+		this->c = other.c;
 	}
 	return (*this);
 }
@@ -39,23 +39,23 @@ MutantStack<T>::~MutantStack()
 template <class T>
 typename std::deque<T>::iterator	MutantStack<T>::begin()
 {
-	return (_stack.begin());
+	return (this->c.begin());
 }
 
 template <class T>
 typename MutantStack<T>::iterator	MutantStack<T>::end()
 {
-	return (_stack.end());
+	return (this->c.end());
 }
 
 template <class T>
 typename MutantStack<T>::const_iterator	MutantStack<T>::begin() const
 {
-	return (_stack.begin());
+	return (this->c.begin());
 }
 
 template <class T>
 typename MutantStack<T>::const_iterator	MutantStack<T>::end() const
 {
-	return (_stack.end());
+	return (this->c.end());
 }

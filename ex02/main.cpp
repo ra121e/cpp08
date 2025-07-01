@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 17:38:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/01 09:26:21 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 19:55:47 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,36 @@ int	main(void)
 	}
 	std::stack<int> s(mstack);
 	}
+	{
+	Banner("const test");
+	MutantStack<int>	a;
+	a.push(42);
+	a.push(24);
+	a.push(57);
+	a.push(111);
+	a.push(7);
+	std::cout << "a: ";
+	for (MutantStack<int>::iterator it = a.begin(); it != a.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+	MutantStack<int> const	b(a);
+	std::cout << "b is const: ";
+	for (MutantStack<int>::const_iterator it = b.begin(); it != b.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+	MutantStack<int> c = a;
+	std::cout << "c is assigned: ";
+	for (MutantStack<int>::iterator it = c.begin(); it != c.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
+
+	}
+
 	return (0);
 }

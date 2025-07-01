@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/28 16:41:59 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 22:04:56 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ Span<T>::Span(unsigned int n):
 
 template <typename T>
 Span<T>::Span(const Span &other):
-	_N(other._N)
-{
-
-}
+	_N(other._N),
+	_container(other._container)
+{}
 
 template <typename T>
 Span<T>	&Span<T>::operator=(const Span &other)
@@ -38,6 +37,7 @@ Span<T>	&Span<T>::operator=(const Span &other)
 	if (this != &other)
 	{
 		this->_N = other._N;
+		this->_container = other._container;
 	}
 	return (*this);
 }
@@ -98,6 +98,8 @@ unsigned int	Span<T>::shortestSpan(void)
 	}
 	std::cout << std::endl;
 
+	if (span.empty())
+		throw std::runtime_error("Empty container. not calculate shortest span");
 	span.erase(span.begin());
 
 	std::cout << "erase: ";
@@ -118,6 +120,10 @@ unsigned int	Span<T>::longestSpan(void)
 	typename std::vector<T>::iterator	maxIt;
 
 	minIt = std::min_element(_container.begin(), _container.end());
+	if (minIt == _container.end())
+		throw std::runtime_error("contaner empty.");
 	maxIt = std::max_element(_container.begin(), _container.end());
+	if (maxIt == _container.end())
+		throw std::runtime_error("contaner empty");
 	return (*maxIt - *minIt);
 }

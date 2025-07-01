@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 21:03:35 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/01 09:24:33 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 18:05:24 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,35 +47,15 @@ typename MutantStack<T>::iterator	MutantStack<T>::end()
 {
 	return (_stack.end());
 }
-/**
- * functions
- */
-//template <class T>
-//void	MutantStack<T>::push(T value)
-//{
-//	this->_stack.push_front(value);
-//}
-//
-//template <class T>
-//T const	&MutantStack<T>::top(void) const
-//{
-//	return (this->_stack.front());
-//}
-//
-//template <class T>
-//size_t	MutantStack<T>::size(void)
-//{
-//	return (this->_stack.size());
-//}
-//
-//template <class T>
-//bool	MutantStack<T>::empty(void)
-//{
-//	return (this->_stack.empty());
-//}
-//
-//template <class T>
-//void	MutantStack<T>::pop(void)
-//{
-//	this->_stack.pop_front();
-//}
+
+template <class T>
+typename MutantStack<T>::const_iterator	MutantStack<T>::begin() const
+{
+	return (_stack.begin());
+}
+
+template <class T>
+typename MutantStack<T>::const_iterator	MutantStack<T>::end() const
+{
+	return (_stack.end());
+}

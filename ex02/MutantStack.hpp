@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:21:52 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/01 09:23:50 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/01 18:00:18 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ class MutantStack :
 		~MutantStack();
 
 		typedef typename std::deque<T>::iterator iterator;
+		typedef typename std::deque<T>::const_iterator const_iterator;
 
 		typename std::deque<T>::iterator	begin();
-		iterator	end();
-//		void	push(T value);
-//		T const	&top(void) const;
-//		size_t	size(void);
-//		bool	empty(void);
-//		void	pop(void);
+		iterator		end();
+		const_iterator	begin() const;
+		const_iterator	end() const;
+
 	private:
 		std::deque<T> _stack;
 };

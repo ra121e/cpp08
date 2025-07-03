@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/03 13:58:26 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 14:56:25 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(void)
 	}
 	std::cout << container.shortestSpan() << std::endl;
 	std::cout << container.longestSpan() << std::endl;
+
 	Banner("same test to copied container b ");
 	Span<int>	b(container);
 	std::vector<int>::const_iterator	itb;
@@ -76,6 +77,7 @@ int	main(void)
 	}
 	std::cout << b.shortestSpan() << std::endl;
 	std::cout << b.longestSpan() << std::endl;
+
 	Banner("same test to assigned container c ");
 	Span<int>	c = container;
 	std::vector<int>::const_iterator	itc;
@@ -133,6 +135,7 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+
 	Banner("add range test: range can be array");
 	int	arr[] = {333, 444, 555};
 	std::size_t size = sizeof(arr) / sizeof(arr[0]);
@@ -177,6 +180,7 @@ int	main(void)
 	std::cout << c.shortestSpan() << std::endl;
 	std::cout << c.longestSpan() << std::endl;
 	}
+
 	{
 	Banner("empty contaner test");
 	Span<int>	con(0);
@@ -192,7 +196,7 @@ int	main(void)
 	{
 		std::cout << con.shortestSpan() << std::endl;
 	}
-	catch (std::runtime_error &e)
+	catch (std::out_of_range &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
@@ -200,7 +204,7 @@ int	main(void)
 	{
 		std::cout << con.longestSpan() << std::endl;
 	}
-	catch (std::runtime_error &e)
+	catch (std::out_of_range &e)
 	{
 		std::cout << e.what() << std::endl;
 	}

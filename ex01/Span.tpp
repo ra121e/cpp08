@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/03 13:40:15 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 14:38:51 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,41 +89,17 @@ template <typename T>
 unsigned int	Span<T>::shortestSpan(void)
 {
 	typename std::vector<T>	sortedContainer = _container;
-	std::cout << "original: ";
-	for (typename std::vector<T>::iterator it = sortedContainer.begin(); it != sortedContainer.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
 
+	if (_container.size() <= 1)
+		throw std::out_of_range("initial contaier size should be greater than 1.");
 	std::sort(sortedContainer.begin(), sortedContainer.end());
-	std::cout << "sorted: ";
-	for (typename std::vector<T>::iterator it = sortedContainer.begin(); it != sortedContainer.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
-	std::cout << "container size: " << sortedContainer.size() << std::endl;
 	typename std::vector<T>	span(sortedContainer.size());
 	std::adjacent_difference(sortedContainer.begin(), sortedContainer.end(), span.begin());
-
-	std::cout << "difference: ";
-	for (typename std::vector<T>::iterator it = span.begin(); it != span.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
 
 	if (span.empty())
 		throw std::runtime_error("Empty container. not calculate shortest span");
 	span.erase(span.begin());
 
-	std::cout << "erase: ";
-	for (typename std::vector<T>::iterator it = span.begin(); it != span.end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
 	typename std::vector<T>::iterator	minIt;
 	minIt = std::min_element(span.begin(), span.end());
 	return (*minIt);
@@ -135,6 +111,8 @@ unsigned int	Span<T>::longestSpan(void)
 	typename std::vector<T>::iterator	minIt;
 	typename std::vector<T>::iterator	maxIt;
 
+	if (_container.size() <= 1)
+		throw std::out_of_range("initial contaier size should be greater than 1.");
 	minIt = std::min_element(_container.begin(), _container.end());
 	if (minIt == _container.end())
 		throw std::runtime_error("contaner empty.");

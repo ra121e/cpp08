@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 12:27:57 by athonda           #+#    #+#             */
-/*   Updated: 2025/06/27 21:11:46 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 13:07:44 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Span
 		std::vector<T> const	&getContainer(void) const;
 
 		void	addNumber(unsigned int num);
+		void	addRange(typename std::vector<T>::const_iterator, typename std::vector<T>::const_iterator);
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
 	private:

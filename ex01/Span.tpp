@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/01 22:04:56 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 13:16:58 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <algorithm>
 #include <vector>
 #include <stdexcept>
+#include <iterator> //distance
 
 template <typename T>
 Span<T>::Span()
@@ -66,6 +67,20 @@ void	Span<T>::addNumber(unsigned int num)
 	else
 	{
 		this->_container.push_back(num);
+	}
+}
+
+template <class T>
+void	Span<T>::addRange(typename std::vector<T>::const_iterator start, typename std::vector<T>::const_iterator last)
+{
+	std::size_t	rangesize = std::distance(start, last);
+	if (this->_container.size() + rangesize > this->_N)
+	{
+		throw std::out_of_range("cannot add beyond the container size");
+	}
+	else
+	{
+		this->_container.insert(_container.end(),start, last);
 	}
 }
 

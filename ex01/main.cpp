@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/03 11:38:58 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 13:26:31 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,12 @@ int	main(void)
 	container.addNumber(24);
 	container.addNumber(9);
 	container.addNumber(1);
-	Span<int>	b(container);
-	Span<int>	c = container;
+	std::vector<int>::const_iterator	it;
+	for (it = container.getContainer().begin(); it != container.getContainer().end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+	std::cout << std::endl;
 	std::cout << "test of addNumber excessing the container size" << std::endl;
 	try
 	{
@@ -51,15 +55,16 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::vector<int>::const_iterator	it;
-	for (it = container.getContainer().begin(); it != container.getContainer().end(); ++it)
-	{
-		std::cout << *it << " ";
-	}
-	std::cout << std::endl;
 	std::cout << container.shortestSpan() << std::endl;
 	std::cout << container.longestSpan() << std::endl;
-	Banner("same test to copied b ");
+	Banner("same test to copied container b ");
+	Span<int>	b(container);
+	std::vector<int>::const_iterator	itb;
+	for (itb = b.getContainer().begin(); itb != b.getContainer().end(); ++itb)
+	{
+		std::cout << *itb << " ";
+	}
+	std::cout << std::endl;
 	std::cout << "test of addNumber excessing the container size" << std::endl;
 	try
 	{
@@ -69,15 +74,16 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::vector<int>::const_iterator	itb;
-	for (itb = b.getContainer().begin(); itb != b.getContainer().end(); ++itb)
-	{
-		std::cout << *itb << " ";
-	}
-	std::cout << std::endl;
 	std::cout << b.shortestSpan() << std::endl;
 	std::cout << b.longestSpan() << std::endl;
-	Banner("same test to assigned c ");
+	Banner("same test to assigned container c ");
+	Span<int>	c = container;
+	std::vector<int>::const_iterator	itc;
+	for (itc = c.getContainer().begin(); itc != c.getContainer().end(); ++itc)
+	{
+		std::cout << *itc << " ";
+	}
+	std::cout << std::endl;
 	std::cout << "test of addNumber excessing the container size" << std::endl;
 	try
 	{
@@ -87,14 +93,48 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::vector<int>::const_iterator	itc;
-	for (itc = c.getContainer().begin(); itc != c.getContainer().end(); ++itc)
-	{
-		std::cout << *itc << " ";
-	}
-	std::cout << std::endl;
 	std::cout << c.shortestSpan() << std::endl;
 	std::cout << c.longestSpan() << std::endl;
+
+	Banner("add range test: insert first container into container a");
+	Span<int>	a(7);
+	try
+	{
+		a.addNumber(2147483647);
+	}
+	catch (std::out_of_range &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "make container a, and add number " << a.getContainer().front() << std::endl;
+	std::cout << "then, try to insert original container above " << std::endl;
+	try
+	{
+		a.addRange(container.getContainer().begin(), container.getContainer().end());
+	}
+	catch (std::out_of_range &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "here is the new container a" << std::endl;
+	std::vector<int>::const_iterator	ita;
+	for (ita = a.getContainer().begin(); ita != a.getContainer().end(); ++ita)
+	{
+		std::cout << *ita << " ";
+	}
+	std::cout << std::endl;
+	std::cout << "now, try to insert original container again " << std::endl;
+	try
+	{
+		a.addRange(container.getContainer().begin(), container.getContainer().end());
+	}
+	catch (std::out_of_range &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << a.shortestSpan() << std::endl;
+	std::cout << a.longestSpan() << std::endl;
 	}
 	{
 	Banner("10000 test");

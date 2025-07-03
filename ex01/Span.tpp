@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:33:50 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/03 13:16:58 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 13:40:15 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void	Span<T>::addNumber(unsigned int num)
 }
 
 template <class T>
-void	Span<T>::addRange(typename std::vector<T>::const_iterator start, typename std::vector<T>::const_iterator last)
+template <typename U>
+void	Span<T>::addRange(U start, U last)
 {
 	std::size_t	rangesize = std::distance(start, last);
 	if (this->_container.size() + rangesize > this->_N)

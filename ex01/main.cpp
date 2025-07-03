@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:51:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/07/01 22:11:05 by athonda          ###   ########.fr       */
+/*   Updated: 2025/07/03 11:38:58 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	Banner(std::string title)
 
 int		randomInt(void)
 {
-	unsigned int	high = static_cast<unsigned int>(std::rand()) & 0xFFFF;
+	unsigned int	high = static_cast<unsigned int>(std::rand()) & 0x0000FFFF;
 	unsigned int	low = static_cast<unsigned int>(std::rand()) & 0xFFFF;
 	unsigned int	combined = (high << 16) | low;
 
